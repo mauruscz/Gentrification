@@ -5,8 +5,7 @@
 1. [Citing](#citing)
 2. [Packages](#packages)
 3. [Abstract](#abstract)
-5. [Structure of the repository](#structure-of-the-repository)
-6. [Analysis](#analysis)
+4. [Analysis](#analysis)
 
 
 
@@ -45,7 +44,7 @@ These packages will automatically install the other required ones (e.g ```matplo
 The phenomenon of gentrification of an urban area is characterized by the displacement of lower-income residents due to rising living costs and an influx of wealthier individuals. This study presents an agent-based model simulating urban gentrification through the relocation of three income groups driven by living costs. The model incorporates economic and sociological theories to generate realistic neighborhood transition patterns. We introduce a temporal network-based measure to track the outflow of low-income residents and the inflow of middle- and high-income residents over time. Numerical experiments reveal that high-income residents trigger gentrification. Our network-based measure consistently detects gentrification patterns earlier than traditional count-based methods, potentially serving as an early detection tool in real-world scenarios. The analysis also highlights how city density promotes gentrification. This framework offers valuable insights for understanding gentrification dynamics and informing urban planning and policy decisions.
 
 
-# Structure of the repository
+# Analysis
 
 In the **main** level of the repo you can find:
 - ```run_single.ipynb```and ```run_batch.py```
@@ -53,5 +52,4 @@ In the **main** level of the repo you can find:
         - ```run_single.ipynb```
            Notebook for taking familiarity with the model and showing some interesting plots (not in the paper)
         - ```run_batch.py```
-        -  Script for running several parameter combination and repetitions of the model. Take one string as parameter, the strategy of agents. Can be ```improve```, ```random``` or ```randomdest```. The first one is the main model, while the other two are, respectively, the Full Random model and the Random Destination model (see Supplementary Notes for more details).
-
+           Script for running several parameter combination and repetitions of the model. Take two string as parameter. The first one is the strategy of agents. Can be ```improve```, ```random``` or ```randomdest```. The first one is the main model, while the other two are, respectively, the Full Random model and the Random Destination model (see Supplementary Notes for more details). The second parameter is the starting deployment. It can be either ```centre_segr``` or ```centre_segr-big```. It will store the results into the folder ```out/batch_results/{mode}/{starting_deployment}/{n_agents}/exps``` with varying ```n_agents```.
