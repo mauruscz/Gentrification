@@ -46,10 +46,84 @@ The phenomenon of gentrification of an urban area is characterized by the displa
 
 # Analysis
 
-In the **main** level of the repo you can find:
-- ```run_single.ipynb```and ```run_batch.py```
-    - These codes execute, respectively, one run of the model and a batch execution of more models (more repetitions, several parameter combintions).
-        - ```run_single.ipynb```
-           Notebook for taking familiarity with the model and showing some interesting plots (not in the paper)
-        - ```run_batch.py```
-           Script for running several parameter combination and repetitions of the model. Take two string as parameter. The first one is the strategy of agents. Can be ```improve```, ```random``` or ```randomdest```. The first one is the main model, while the other two are, respectively, the Full Random model and the Random Destination model (see Supplementary Notes for more details). The second parameter is the starting deployment. It can be either ```centre_segr``` or ```centre_segr-big```. It will store the results into the folder ```out/batch_results/{mode}/{starting_deployment}/{n_agents}/exps``` with varying ```n_agents```.
+# Analysis
+
+### Single Run Analysis
+The `run_single.ipynb` notebook provides:
+- Interactive model experimentation 
+- Detailed visualization of model dynamics
+- Exploratory analysis capabilities
+
+### Batch Processing
+Run multiple simulations with different parameters using `run_batch.py`:
+
+`python run_batch.py <strategy> <deployment>`
+
+#### Parameters:
+- `strategy`: 
+  - `improve`: Main model (primary implementation)
+  - `random`: Full Random model 
+  - `randomdest`: Random Destination model
+- `deployment`:
+  - `centre_segr`: Standard central segregation
+  - `centre_segr-big`: Extended central segregation
+
+
+#### Output Structure
+Results location:
+
+out/batch_results/{strategy}/{deployment}/{n_agents}/exps/
+
+Generated for each run:
+- Model DataFrame: Global model evolution metrics
+- Agent DataFrame: Time-series of agent locations and properties
+
+### Post-Processing
+Calculate segregation metrics from batch results:
+
+`python batch_calculate_Gs.py -m <mode> -n <num_agents>`
+
+#### Parameters:
+- `-m`: Analysis mode (`improve`, `random`, `randomdest`)
+- `-n`: Agent count to analyze
+
+#### Output
+Saved to:
+
+out/batch_results/{mode}/{deployment}/{n_agents}/intermediate/
+
+Producing:
+1. Network-based segregation metrics
+2. Count-based segregation metrics
+
+
+**Warning** Both `run_batch.py` and `batch_calculate_Gs.py` are built with an highly-parallelised code, given the high computational load of the task.
+
+
+
+
+### Results Analysis
+
+#### Main Results
+Use `batch_analysis.ipynb` to reproduce Figures 3,5,6
+
+#### Flow Visualization
+Use `flows_viz.ipynb` to generate Figure 4a, b
+
+#### Early Warning Analysis
+Use `who_first.ipynb` to reproduce: Figure 4c and Supplementary Notes 1-3: 
+
+## Project Structure
+```
+├── run_single.ipynb      # Single run analysis
+├── batch_analysis.ipynb  # First results visualization
+├── flows_viz.ipynb      # Flow pattern analysis
+|── who_first.ipynb      # Early warning analysis
+|── run_batch.py         # Batch runner
+└── batch_calculate_Gs.py # Segregation metrics calculator
+out/
+  └── batch_results/       # Results storage
+      ├── improve/        
+      ├── random/
+      └── randomdest/
+```
