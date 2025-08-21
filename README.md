@@ -15,15 +15,12 @@ If you use the code in this repository, please cite our paper:
 
 *Mauro, G., Pedreschi, N., Lambiotte, R., & Pappalardo, L. (2025). Dynamic models of gentrification. Advances in Complex Systems. https://doi.org/10.1142/S0219525925400065
 ```
-@article{mauro2024dynamic,
-  title={Dynamic models of gentrification},
-  author={Mauro, Giovanni and Pedreschi, Nicola and Pappalardo, Luca and Lambiotte, Renaud.},
-  journal={XXX},
-  volume={XX},
-  number={XX},
-  pages={XX},
-  year={2024},
-  publisher={XXX}
+@article{mauro2025dynamic,
+  author       = {Mauro, Giovanni and Pedreschi, Nicola and Lambiotte, Renaud and Pappalardo, Luca},
+  title        = {Dynamic models of gentrification},
+  journal      = {Advances in Complex Systems},
+  year         = {2025},
+  doi          = {10.1142/S0219525925400065}
 }
 ```
 
