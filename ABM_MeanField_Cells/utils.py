@@ -36,7 +36,10 @@ def calculate_arriving_percentile(model, agent, cells_with_space): #calculate th
     cells2wealths = {cell: [a.wealth for a in model.grid.get_cell_list_contents(cell)] for cell in cell_list}
 
 
-    cells2percentile = {cell: percentileofscore(cells2wealths[cell], agent.wealth, kind='weak') for cell in cell_list}
+    cells2percentile = {
+        cell: min(100.0, round(percentileofscore(cells2wealths[cell], agent.wealth, kind='weak'), 12))
+        for cell in cell_list
+    }
 
     #if there's a value >100 print it
     for cell in cells2percentile:

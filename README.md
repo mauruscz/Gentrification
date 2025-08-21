@@ -13,8 +13,7 @@
 In this repository you can find the code for running our Gentrification model and to replicate the analysis conducted in our paper.
 If you use the code in this repository, please cite our paper:
 
-*Mauro, G., Pedreschi, N., Pappalardo, L, Lambiotte,R. (2024). Dynamic models of gentrification. arXiv preprint arXiv:XXXX (2024).
-
+*Mauro, G., Pedreschi, N., Lambiotte, R., & Pappalardo, L. (2025). Dynamic models of gentrification. Advances in Complex Systems. https://doi.org/10.1142/S0219525925400065
 ```
 @article{mauro2024dynamic,
   title={Dynamic models of gentrification},
