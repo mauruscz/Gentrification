@@ -157,18 +157,12 @@ class GentModel(mesa.Model):
 
         self.schedule.step()
 
-        self.mean_richness_matrix = calculate_mean_richness_matrix(self)
-        self.mean_richness_matrix_array.append(self.mean_richness_matrix)
-
 
 
 
         self.median_richness_matrix = calculate_median_richness_matrix(self)
         self.median_richness_matrix_array.append(self.median_richness_matrix)
 
-
-        self.std_dev_richness_matrix = calculate_std_dev_richness_matrix(self)
-        self.std_dev_richness_matrix_array.append(self.std_dev_richness_matrix)
 
         self.total_richness_matrix = calculate_total_richness_matrix(self)
         self.total_richness_matrix_array.append(self.total_richness_matrix)
